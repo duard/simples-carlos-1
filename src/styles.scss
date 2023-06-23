@@ -7,6 +7,7 @@ body {
 }
 
 // Grid structural styles (CSS Grid)
+.logo { grid-area: logo; }
 .header { grid-area: header; }
 .main { grid-area: main; }
 .sidebar-left { grid-area: sidebar-left; }
@@ -20,7 +21,8 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto auto 1fr auto auto;
-  grid-template-areas: "header"
+  grid-template-areas: "logo"
+                       "header"
                        "sidebar-left"
                        "main"
                        "sidebar-right"
@@ -31,9 +33,9 @@ body {
   .grid-container {
     grid-template-columns: 150px 1fr 150px;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header header header"
+    grid-template-areas: "logo header header"
                          "sidebar-left main sidebar-right"
-                         "footer footer footer";
+                         "sidebar-left footer footer";
   }
 }
 
@@ -58,3 +60,34 @@ body {
   padding: 25px;
   background-color: darken($gray, 3%);
 }
+
+.sidebar-left {
+  background-color: rgb(80, 80, 112);
+}
+
+.logo {
+  padding: 20px;
+  background-color: $accent-color;
+  color: $white;
+  text-align: center;
+  background-color: purple;
+}
+
+
+.sidebar-right {
+  background-color: rgb(87, 120, 120);
+
+}
+
+.header {
+  background-color: red;
+}
+
+.footer {
+  background-color: orange;
+}
+
+
+
+
+
