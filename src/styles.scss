@@ -1,20 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-:root {
-  --first-color: #488cff;
-  --second-color: #ffff8c;
-} // we can also define variables with JavaScript
-
-div {
-  background-color: var(--first-color);
-  color: var(--second-color);
-}
 $white: #fff !default;
 $gray: #f9f9f9 !default;
 $accent-color: #145474 !default;
 
+body {
+  overflow-y: hidden;
+}
 
 // Grid structural styles (CSS Grid)
-.logo { grid-area: logo; }
 .header { grid-area: header; }
 .main { grid-area: main; }
 .sidebar-left { grid-area: sidebar-left; }
@@ -26,11 +18,9 @@ $accent-color: #145474 !default;
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
-  height: 100vh;
   grid-template-columns: 100%;
   grid-template-rows: auto auto 1fr auto auto;
-  grid-template-areas: "logo"
-                       "header"
+  grid-template-areas: "header"
                        "sidebar-left"
                        "main"
                        "sidebar-right"
@@ -41,7 +31,7 @@ $accent-color: #145474 !default;
   .grid-container {
     grid-template-columns: 150px 1fr 150px;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: "logo header header"
+    grid-template-areas: "header header header"
                          "sidebar-left main sidebar-right"
                          "footer footer footer";
   }
@@ -52,9 +42,6 @@ $accent-color: #145474 !default;
   background-color: $gray;
 }
 
-.logo  {
-  background-color: orange;
-}
 .header,
 .footer {
   padding: 20px;
@@ -70,11 +57,4 @@ $accent-color: #145474 !default;
 .sidebar {
   padding: 25px;
   background-color: darken($gray, 3%);
-}
-.sidebar-right {
-  background-color: pink;
-}
-
-.sidebar-left {
-  background-color: greenyellow;
 }
