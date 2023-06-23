@@ -1,18 +1,21 @@
-<div class="grid-container" v-grid columns="150px 1fr 150px" rows="auto 1fr auto" areas="
-  'logo header header'
-  'sidebar-left main sidebar-right'
-  'sidebar-left footer footer">
+<div class="grid-container" v-grid columns="150px 1fr 150px" rows="auto 1fr auto" [movableObject]="minhaArea">
 
-  <div class="logo">
+  <!-- <div [ngClass]="logo === 'logo' ? 'header' : 'logo'">
     logo
-  </div>
+  </div> -->
 
+  <!-- <div class="logo">Logado</div> -->
+
+  <div *ngIf="logo==='logo'" class=" logo">Logado</div>
   <header class="header">
     Header
   </header>
 
   <main class="main">
     Content
+    <pre>{{minhaArea}}</pre>
+    <pre>{{logo}}</pre>
+    <button (click)="changeClass()">Mude o header</button>
   </main>
 
   <div class="sidebar sidebar-left">
@@ -27,42 +30,3 @@
     Footer
   </footer>
 </div>
-<!--
-
-[ngStyle]="{ 'grid-container': 'header'}
-<div v-grid columns="100%" rows="auto auto 1fr auto auto"
-  areas="'logo header header' 'sidebar-left main sidebar-right' 'footer footer footer">
-  <header class="logo">
-    logo
-  </header>
-  <header class="header">
-    Header
-  </header>
-
-  <main class="main">
-    <div input-box [name]="'background-color'" [value]="'red'">oi</div>
-    <div input-box [name]="'color'" [value]="'red'">deveria</div>
-    <div input-box [name]="'color'" [value]="'green'">gomas</div>
-    <input type="text" input-box [name]="'color'" [value]="'green'">
-  </main>
-
-  <div class="sidebar sidebar-left">
-    Left Sidebar
-  </div>
-
-  <div class="sidebar sidebar-right">
-    Right Sidebar
-  </div>
-
-  <footer class="footer">
-    Footer
-  </footer>
-</div>
- -->
-
-<!-- <div v-grid columns="1fr 100px" rows="1fr 1fr" areas="'header header' 'area1 area2'">
-  <div v-grid-area="area1" style="background-color: red">
-    <div style="height: 1000px"></div>
-  </div>
-  <div v-grid-area="area2" style="background-color: yellow"></div>
-</div> -->
